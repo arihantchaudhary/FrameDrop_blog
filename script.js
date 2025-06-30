@@ -18,37 +18,24 @@ function scrollCarousel(direction) {
       }
     });
   });
-  window.onload = function() {
+  window.onload = function () {
     const mode = localStorage.getItem("mode");
     if (mode === "dark") {
       document.body.classList.add("dark-mode");
     }
-  }
+  };
 
-  // Toggle mode and save preference
+  // Toggle dark mode and save preference
   function toggleDarkMode() {
     const body = document.body;
     body.classList.toggle("dark-mode");
 
-    // Save or remove from localStorage
     if (body.classList.contains("dark-mode")) {
       localStorage.setItem("mode", "dark");
     } else {
       localStorage.setItem("mode", "light");
     }
   }
-  function submitComment() {
-    const name = document.getElementById("name").value.trim();
-    const message = document.getElementById("message").value.trim();
-  
-    if (name && message) {
-      const newCommentRef = db.ref("comments").push();
-      newCommentRef.set({ name, message });
-      document.getElementById("name").value = '';
-      document.getElementById("message").value = '';
-    }
-  }
-  
   document.addEventListener("DOMContentLoaded", () => {
    
     const sections = document.querySelectorAll(".comment-section");
