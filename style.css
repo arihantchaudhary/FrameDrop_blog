@@ -469,3 +469,11 @@ nav{
   border-color: #0056b3;
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
+@media (max-width:768px) {
+  #searchInput{
+    padding: 5px 5px;
+    font-size: 0.8rem;
+    margin: 5px auto;
+  }
+  
+}
