@@ -3,22 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Import Melodrama and Plus Jakarta Sans -->
-<link href="https://api.fontshare.com/v2/css?f[]=melodrama@300,400,500,600,700&f[]=plus-jakarta-sans@200,300,400,500,600,700,800&f[]=pencerio@300,400,500,600,700&display=swap" rel="stylesheet">
-<link href="https://api.fontshare.com/v2/css?f[]=britney@400&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=melodrama@300,400,500,600,700&f[]=plus-jakarta-sans@200,300,400,500,600,700,800&f[]=pencerio@300,400,500,600,700&f[]=britney@400&f[]=zodiak@200,300,400,500,600,700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
     <title>FrameDrop_Blog</title>
 </head>
-<body>
+<body>  
        <nav id="logo">
        <div class="navbar">
         <div class="logo" > <a href="#logo" >FrameDrop</a></div>
         <div class="HBA">
-            <a href="#home">home</a><a href="#blog">blogs</a><a href="#about">about</a>   
+            <a href="#home">home</a><a href="#latest">latest</a> <a href="#blog">blogs</a><a href="#about">about</a>  
         </div>
-        <div class="mode"><button onclick="toggleDarkMode()">light / dark</button></div>
-       </div>
-       </nav>
+         </div>
+         </nav>
 
        <div class="blankspace"   id="home" > </div>
        <div class="home"  >
@@ -31,14 +29,14 @@
                 leave your own thoughts, and discover what’s worth watching next. Because here, your voice shapes the watchlist.</p>
         </div>
          
-       <div class="today-tranding">
+       <div class="today-tranding" id="latest">
       
         <div class="line">LATEST SHOWs & MOVIEs</div>
       
-        <div class="carousel-container">
+        <div class="latestt-container">
             <button class="arrow-btn arrow-left" onclick="scrollCarousel(-1)">&#8592;</button>
             
-            <div class="carousel" id="carousel">
+            <div class="latestt" id="latestt">
               <div class="card">
                <a href="blog1.html"> <img src="im9.jpg" alt="Movie 1" /></a>
                 <h3>Squid Game – S3  <h>june 27</h> </h3>
@@ -181,28 +179,22 @@
             <div class="footer-links">
               <div class="footer-column">
                 <h4>CONTENT</h4>
-                <a href="#">Blog</a>
-                <a href="#">Podcasts</a>
-                <a href="#">Latest</a>
+                
               </div>
               <div class="footer-column">
                 <h4>COMPANY</h4>
-                <a href="#">About</a>
-                <a href="#">Contact us</a>
+               
               
               </div>
               <div class="footer-column">
                 <h4>SOCIAL</h4>
-                <a href="#">Instagram</a>
-                <a href="#">Facebook</a>
-                <a href="#">Linkedin</a>
-                <a href="#">Youtube</a>
+               
               </div>
             </div>
         
             <div class="footer-bottom">
               <div class="logoname" >FrameDrop</div>
-              <p>© 2025  FrameDrop by <a href="https://arihantchaudharyarc.netlify.app" target="_blank">Arihant Chaudhary</a> &nbsp;|&nbsp; All rights reserved &nbsp;|&nbsp; <a href="#">Privacy</a> &nbsp;|&nbsp; <a href="#">Contact</a></p>
+              <p>© 2025  FrameDrop by <a href="https://arihantchaudharyarc.netlify.app" target="_blank"><u>Arihant Chaudhary</u></a> &nbsp;|&nbsp; All rights reserved &nbsp;|&nbsp; <a href="#">Privacy</a> &nbsp;|&nbsp; <a href="#">Contact</a></p>
             </div>
           </div>
         </footer>
