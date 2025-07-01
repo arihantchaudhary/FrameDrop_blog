@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link href="https://api.fontshare.com/v2/css?f[]=melodrama@300,400,500,600,700&f[]=plus-jakarta-sans@200,300,400,500,600,700,800&f[]=pencerio@300,400,500,600,700&display=swap" rel="stylesheet">
-<link href="https://api.fontshare.com/v2/css?f[]=britney@400&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=melodrama@300,400,500,600,700&f[]=plus-jakarta-sans@200,300,400,500,600,700,800&f[]=pencerio@300,400,500,600,700&f[]=britney@400&f[]=zodiak@200,300,400,500,600,700&display=swap" rel="stylesheet">
    
   <title>Goodboy Blog</title>
   <link rel="stylesheet" href="style.css" />
@@ -40,5 +39,22 @@
     
  </section>
   <script src="script.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const mode = localStorage.getItem("mode") || 
+                  (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  
+      if (mode === "dark") {
+        document.body.classList.add("dark-mode");
+      }
+    });
+  
+    function toggleDarkMode() {
+      const body = document.body;
+      const isDark = body.classList.toggle("dark-mode");
+      localStorage.setItem("mode", isDark ? "dark" : "light");
+    }
+  </script>
+  
 </body>
 </html>
