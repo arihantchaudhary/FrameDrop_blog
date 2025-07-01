@@ -14,9 +14,9 @@ html, body{
     transition: all 0.3s ease;
 }
 nav{
-    position: relative;
-   
+    position: relative;  
 }
+
 .navbar{
     border: 1px solid #1c1c1c80; 
     border-left: none;
@@ -447,12 +447,6 @@ nav{
   
 }
   
-  @media (prefers-color-scheme: dark) {
-    body {
-      background-color: #1c1c1c;
-      color: #f9f6ef;
-    }
-  }
  
   
 #searchInput {
