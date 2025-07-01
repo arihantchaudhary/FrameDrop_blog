@@ -3,10 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link href="https://api.fontshare.com/v2/css?f[]=melodrama@300,400,500,600,700&f[]=plus-jakarta-sans@200,300,400,500,600,700,800&f[]=pencerio@300,400,500,600,700&display=swap" rel="stylesheet">
-<link href="https://api.fontshare.com/v2/css?f[]=britney@400&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=melodrama@300,400,500,600,700&f[]=plus-jakarta-sans@200,300,400,500,600,700,800&f[]=pencerio@300,400,500,600,700&f[]=britney@400&f[]=zodiak@200,300,400,500,600,700&display=swap" rel="stylesheet">
    
-  <title>My Blog Website</title>
+  <title>Keshari-2 blog</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -21,7 +20,10 @@
  
       <div class="post">
         <div class="boxleft"> <img src="im17o.jpg" alt="Blog imgage" /></div>
-        <div class="boxright">  <p>Audiences are calling Kesari Chapter 2 a strong emotional ride, especially praising Akshay Kumar’s intense performance and the powerful courtroom scenes. Many viewers felt the film did justice to the story of Jallianwala Bagh, while some thought a few scenes were a bit over-dramatic. Still, the majority appreciated the bold storytelling, patriotic feel, and impactful dialogues. It’s a movie that leaves you thinking, and for many, that’s what made it worth the watch.</p> </div>
+        <div class="boxright">  <p>Audiences are calling Kesari Chapter 2 a strong emotional ride, especially praising Akshay Kumar’s 
+          intense performance and the powerful courtroom scenes. Many viewers felt the film did justice to the story of Jallianwala Bagh, 
+          while some thought a few scenes were a bit over-dramatic. Still, the majority appreciated the bold storytelling, patriotic feel, 
+          and impactful dialogues. It’s a movie that leaves you thinking, and for many, that’s what made it worth the watch.</p> </div>
      
       </div>
 
@@ -36,5 +38,21 @@
     
  </section>
   <script src="script.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const mode = localStorage.getItem("mode") || 
+                  (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  
+      if (mode === "dark") {
+        document.body.classList.add("dark-mode");
+      }
+    });
+  
+    function toggleDarkMode() {
+      const body = document.body;
+      const isDark = body.classList.toggle("dark-mode");
+      localStorage.setItem("mode", isDark ? "dark" : "light");
+    }
+  </script>
 </body>
 </html>
