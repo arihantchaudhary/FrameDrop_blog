@@ -103,7 +103,7 @@ nav{
 
 .here h2{
   position: sticky;
-  top: 50%;
+  top: 30%;
   color: #1c1c1c;
   font-weight: 200;
   font-size: 3.5em;
@@ -142,10 +142,10 @@ nav{
        padding-left: 15%; 
     }
     .here h2{
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
     .here p{
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
    .para p{
             padding-left: 30%;
@@ -153,7 +153,9 @@ nav{
             font-size: .8rem;
    }
     .blankspace{
-      margin: 0%;
+      margin: 2%;
+      height: 40vh;
+      border-radius: 6px;
     }
 }
 .today-tranding{
@@ -358,7 +360,7 @@ nav{
     .tittleinfo p{
       font-size: 0.8rem;
     }
-    .titledate{
+    .titledate h6{
      font-size: .5rem;
      word-spacing: unset;
     }
@@ -444,7 +446,8 @@ nav{
   .newsletter h3{
     font-size: 1.5rem;
   }
-  
+  .footer-container{
+      padding:10px;
 }
   
  
