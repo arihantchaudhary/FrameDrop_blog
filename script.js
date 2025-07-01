@@ -1,116 +1,621 @@
-function scrollCarousel(direction) {
-    const carousel = document.getElementById('carousel');
-    const scrollAmount = 300;
-    carousel.scrollBy({
-      left: direction * scrollAmount,
-      behavior: 'smooth'
-    });
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+}
+html {
+  scroll-behavior: smooth;
+}
+html, body{
+    background-color: #f9f6ef;
+    color: #1c1c1c;
+    /* overflow-x: hidden; */
+    transition: all 0.3s ease;
+}
+body {
+  opacity: 1;
+  transition: all 0.5s ease;
+}
+
+body.fade-out {
+  opacity: 0;
+}
+
+.dark-mode {
+  background-color: #1c1c1c;
+  color: #f9f6ef;
+}
+body.dark-mode * {
+  color: #f9f6ef !important;
+}
+
+nav{
+    position: relative;
+   
+}
+.navbar{
+    border: 1px solid #1c1c1c80; 
+    border-left: none;
+    border-right: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    background-color: #f9f6ef;
+    height: 5vh;
+    position: fixed;
+    top: 0%;
+    width: 100%;
+    z-index: 999;
+    font-weight: 700;
+    color: #1c1c1c;
+}
+ a{
+    text-decoration: none;
+    color: #1c1c1c;
+    
+}
+.logo{
+    margin-left: 2vw;
+    font-family: 'Britney', cursive;
+    font-size: 1.5rem;
+    color: #1c1c1c;
+}
+.HBA{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   color: #1c1c1c;
+}
+.HBA a{
+    padding: 2vw;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 100;
+    font-size: 1rem;
+    color: #1c1c1c;
+}
+
+@media (max-width:768px){
+    .navbar a{
+        font-size: .8rem;
+    }
+    .logo{
+        font-size: 1rem;
+    }
+    
+}
+
+.blankspace{
+    
+    margin: 5rem;
+    height: 70vh;
+    background-image:url('im8.jpg'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+   
+}
+
+.home{
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: #1c1c1c;
+}
+
+.here{
+    width: 100%;
+    padding-left: 10%;
+    display: flex;
+    justify-content: center;
+    align-items:start;
+    font-family: 'Zodiak', serif;
+    font-weight: 200;
+    position: relative;
+    color: #1c1c1c;
+}
+
+.here h2{
+  position: sticky;
+  top: 50%;
+  color: #1c1c1c;
+  font-weight: 200;
+  font-size: 3.5em;
+  padding-right: 1vw;
+  color: #1c1c1c;
+}
+.here p{
+    color: #1c1c1c;
+    font-size: 3.5em;
+  
+}
+.para{
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  
+}
+.para p{
+    padding-top: 2%;
+    padding-bottom: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 37%;
+    padding-right: 20%;
+    font-size: 1rem;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 200;
+    line-height: 1.2;
+}
+@media (max-width:768px){
+    .here{
+       padding-left: 15%; 
+    }
+    .here h2{
+        font-size: 1.5rem;
+    }
+    .here p{
+        font-size: 1.5rem;
+    }
+   .para p{
+            padding-left: 30%;
+            padding-right: 10px;
+            font-size: .8rem;
+   }
+    .blankspace{
+      margin: 0%;
+    }
+}
+.today-tranding{
+  padding: 5% 0px;
+    position: relative;
+    height: auto;
+}
+
+.line{
+  border: #1c1c1c 1px solid;
+  border-left: none;
+  border-right: none;
+  font-family: 'Zodiak', serif;
+  font-weight: 200;
+  font-size: 4rem;
+  padding-left: 2%;
+}
+
+.latestt-container {
+    position: relative;
+    overflow: hidden;
+    padding-top: 10%;
+  }
+
+  .latestt {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 1rem;
+    padding: 1rem 0;
+  }
+
+  .latestt::-webkit-scrollbar {
+    display: none;
+  }
+
+  .card {
+    min-width: 250px;
+    padding: 1rem;
+    flex-shrink: 0;
+ 
+  }
+ 
+  .card img {
+    width: 300px;
+    height: 400px;
+    object-fit:cover;
+    transition: border-radius 0.3s linear;
+  }
+  .card img:hover {
+    border-radius: 16px; 
+    transform: scale(1.05);
+  }
+
+  .card h3 {
+    margin: 0.5rem 0;
+    font-size: 1.8rem;
+    font-family: 'Zodiak', serif;
+    font-weight: 200;
+  }
+  .card h{
+    font-size: 1rem;
+    padding-left: 15%;
+   font-family: 'Plus Jakarta Sans', sans-serif;
+   font-weight: 100;
+  }
+.card p{
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 100;
+}
+  .arrow-btn {
+    position: absolute;
+    top: 18%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: #1c1c1c;
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  .arrow-left {
+    left: 0;
+  }
+
+  .arrow-right {
+    right: 0;
+  }
+
+  @media (max-width: 600px) {
+    .card {
+      min-width: 200px;
+      padding-top: 10%;
+    }
+    .card h3{
+        font-size: 1rem;
+    } .card p{
+        font-size: .7rem;
+    } .card h{
+        font-size: .6rem;
+    }
+  
+    .card img{
+        width: 200px;
+        height: 300px;
+        object-fit:cover;
+    }
+    .arrow-btn{
+          top: 8%;
+    }
+    .line{
+        font-size: 1.8rem;
+       
+    }
+    .today-tranding{
+      padding-top: 10%;
+    }
+  }
+  .blogs{
+    padding: 5% 0px;
+    height: auto;
+  }
+  .showline{
+    border: #1c1c1c 1px solid;
+    border-left: none;
+    border-right: none;
+    font-family: 'Zodiak', serif;
+    font-weight: 200;
+    font-size: 5rem;
+    padding-left: 2%;
+    margin-bottom: 5vh;
+  }
+  .bloglist{
+    margin-bottom: 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+  }
+  .leftb{
+    flex: 1;
+    margin-left: 10%; 
+  }
+  .leftb img{
+   width: 200px;
+   height: 300px;
+   object-fit: cover;
+  }
+  .rightb{
+    flex: 4;
+    padding-right: 4%;
+    position: relative;
+  }
+  .tittle h1{
+    font-size: 3rem;
+    font-family: 'Zodiak', serif;
+    font-weight: 200;
+    margin-bottom: 1.8%;
+
+  }
+  .tittleinfo p{
+     font-size: 1rem;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 100;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 2; /* Limit to 2 lines */
+      -webkit-box-orient: vertical;
+      text-overflow: ellipsis;
+  }
+  .titledate h6{ 
+    word-spacing: 10px;
+    margin-top: 3%;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 100;
+    font-size: .9rem;
+  }
+  @media (max-width:768px) {
+    .showline{
+      margin-top: 5%;
+      font-size: 3rem;
+    }
+    .bloglist{
+      flex-direction: column;
+      align-items: center;
+      height: auto;
+      padding: 2%;
+    }
+    .leftb{
+      margin: unset;
+    }
+    .leftb img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .tittle h1{
+          font-size: 2rem;
+    }
+    .tittleinfo p{
+      font-size: 0.8rem;
+    }
+    .titledate{
+     font-size: .5rem;
+     word-spacing: unset;
+    }
   }
   
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        target.scrollIntoView({
-          behavior: 'smooth'
-        });
-      }
-    });
-  });
-  window.onload = function () {
-    const mode = localStorage.getItem("mode");
-    if (mode === "dark") {
-      document.body.classList.add("dark-mode");
-    }
-  };
-
-  // Toggle dark mode and save preference
-  function toggleDarkMode() {
-    const body = document.body;
-    body.classList.toggle("dark-mode");
-
-    if (body.classList.contains("dark-mode")) {
-      localStorage.setItem("mode", "dark");
-    } else {
-      localStorage.setItem("mode", "light");
+  .footer {
+    padding: 60px 40px;
+  }
+  
+  .footer-container {
+    margin: auto;
+    border: 1px solid #1c1c1c;
+    border-radius: 12px;
+    padding: 40px;
+  }
+  
+  .newsletter h3 {
+    font-family: 'Zodiak', serif;
+    font-weight: 200;
+    font-size: 3rem;
+    margin-bottom: 10px;
+  }
+  
+  .newsletter form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    border-bottom: 1px solid #1c1c1c;
+    padding-bottom: 10px;
+  }
+  
+  .newsletter input {
+    flex: 1;
+    border: none;
+    border-bottom: 1px solid #1c1c1c;
+    background: none;
+    padding: 10px;
+    font-size: 16px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 100;
+  }
+  
+  .newsletter button {
+    font-family: 'Zodiak', serif;
+    font-weight: 200;
+    font-size: 10px;
+    background: none;
+    border: none;
+    
+    cursor: pointer;
+  }
+  
+  .footer-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5%;
+    margin-top: 40px;
+  }
+  
+  .footer-column h4 {
+    font-family: 'Zodiak', serif;
+    font-weight: 200;
+    margin-bottom: 15px;
+    
+  }
+  
+  
+  .footer-bottom {
+    text-align: center;
+    margin-top: 50px;
+  }
+  .footer-bottom p{
+    font-family: 'Zodiak', serif;
+    font-weight: 200;
+  }
+  
+  .logoname{
+    font-size: 40px;
+    font-family: 'Britney', cursive;
+  }
+@media (max-width:768px) {
+  .newsletter h3{
+    font-size: 1.5rem;
+  }
+  
+}
+  
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #1c1c1c;
+      color: #f9f6ef;
     }
   }
-  document.addEventListener("DOMContentLoaded", () => {
-   
-    const sections = document.querySelectorAll(".comment-section");
+  .mode1{
+    padding: 2%;
+    position: fixed;
+    right: 0;
+    top: 0;
+  }
+  .mode1 button{
+    
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: #1c1c1c;
+      
+      border-style: none;
+      background-color: transparent;
+  }
+
+  .postittle{
+    padding: 3%;
+  }
+  .postittle h2{
+    font-family: 'Zodiak', serif;
+    font-weight: 200;
+    font-size: 3rem;
+  }
+  .date{
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 100;
+    font-size: .8rem;
+  }
+  .post {
+        margin: 5%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+  }
+  .boxleft{
+    flex: 1;
+  }
+  .boxleft img {
+    width: 400px;
+    height: 500px;
+    object-fit: cover;
+  }
   
-    sections.forEach(section => {
-      const postId = section.dataset.post;
-      const nameInput = section.querySelector(".name-input");
-      const commentInput = section.querySelector(".comment-input");
-      const submitBtn = section.querySelector(".submit-btn");
-      const commentsList = section.querySelector(".comments-list");
+  .boxright{
+    flex: 2;
+  }
+  .boxright p{
+    font-size: 1.3rem;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 100;
+  }
+ 
+  .comment-section {
+    padding: 5%;
+  }
+  .comment-section h3{
+    font-size: 3rem;
+    font-family: 'Zodiak', serif;
+    font-weight: 200;
+    padding-bottom: 1%;
+  }
+  input, textarea {
+    display: block;
+    background: none;
+    color: #1c1c1c;
+    width: 70%;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 1rem;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 100;
+  }
   
-      let comments = JSON.parse(localStorage.getItem(postId)) || [];
+  button.submit-btn {
+    padding: 10px 15px;
+    background: #007bff;
+    color: #f9f6ef;
+    border: none;
+    cursor: pointer;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 100;
+  }
   
-      const renderComment = (comment, index) => {
-        const commentDiv = document.createElement("div");
-        commentDiv.classList.add("comment");
+  .comments-list .comment {
+    margin-top: 10px;
+    padding: 10px;
+    border-left: 3px solid #007bff;
+    color: #1c1c1c;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 100;
+  }
+  .delete-btn {
+    background: none;
+    border: none;
+    color: #dc3545;
+    float: right;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 0 5px;
+  }
   
-        commentDiv.innerHTML = `
-          <strong>${comment.name}</strong><br>
-          ${comment.message}
-          <button class="delete-btn" data-index="${index}">🗑</button>
-        `;
-  
-        commentsList.appendChild(commentDiv);
-      };
-  
-      comments.forEach((comment, index) => {
-        renderComment(comment, index);
-      });
-  
-      submitBtn.addEventListener("click", () => {
-        const name = nameInput.value.trim();
-        const message = commentInput.value.trim();
-        if (!name || !message) return;
-  
-        const newComment = { name, message };
-        comments.push(newComment);
-        localStorage.setItem(postId, JSON.stringify(comments));
-  
-        renderComment(newComment, comments.length - 1);
-        nameInput.value = "";
-        commentInput.value = "";
-      });
-  
-      commentsList.addEventListener("click", (e) => {
-        if (e.target.classList.contains("delete-btn")) {
-          const index = e.target.dataset.index;
-          comments.splice(index, 1);
-          localStorage.setItem(postId, JSON.stringify(comments));
-  
-          commentsList.innerHTML = "";
-          comments.forEach((c, i) => renderComment(c, i));
-        }
-      });
-    });
-  
-   
-    const searchInput = document.getElementById("searchInput");
-    const blogLists = document.querySelectorAll(".bloglist");
-  
-    if (searchInput) {
-      searchInput.addEventListener("input", () => {
-        const query = searchInput.value.toLowerCase();
-  
-        blogLists.forEach(blog => {
-          const title = blog.querySelector(".tittle h1").textContent.toLowerCase();
-          const content = blog.querySelector(".tittleinfo p").textContent.toLowerCase();
-  
-          if (title.includes(query) || content.includes(query)) {
-            blog.style.display = "flex"; // or "block" depending on your layout
-          } else {
-            blog.style.display = "none";
-          }
-        });
-      });
+  .delete-btn:hover {
+    color: #a71d2a;
+  }
+  @media (max-width:768px) {
+    .postittle{
+      padding-top: 3rem;
     }
-  });
+    .post{
+      flex-direction: column;
+    }
+    .postittle h2{
+      font-size: 2rem;
+    }
+    .boxright p{
+      font-size: 0.8rem;
+    }
+    .date{
+      font-size: 0.5rem;
+    }
+    .comment-section h3{
+      font-size: 1rem;
+    }
+    .input, textarea{
+      font-size: 0.8rem;
+    }
+    .comments-list .comment{
+      font-size: 0.8rem;
+    }
+  }
   
+  
+#searchInput {
+  max-width: 400px;
+  padding: 12px 16px;
+  font-size: 16px;
+  border: 1px solid #1c1c1c;
+  border-radius: 6px;
+  outline: none;
+  margin: 40px auto;
+  display: block;
+  transition: border-color 0.3s ease;
+}
+
+#searchInput:focus {
+  border-color: #0056b3;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
