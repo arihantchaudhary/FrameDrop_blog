@@ -284,7 +284,7 @@ nav{
     border-right: none;
     font-family: 'Zodiak', serif;
     font-weight: 200;
-    font-size: 5rem;
+    font-size: 4rem;
     padding-left: 2%;
     margin-bottom: 5vh;
   }
@@ -310,7 +310,7 @@ nav{
     position: relative;
   }
   .tittle h1{
-    font-size: 3rem;
+    font-size: 2rem;
     font-family: 'Zodiak', serif;
     font-weight: 200;
     margin-bottom: 1.8%;
@@ -336,7 +336,7 @@ nav{
   @media (max-width:768px) {
     .showline{
       margin-top: 5%;
-      font-size: 3rem;
+      font-size: 2rem;
     }
     .bloglist{
       flex-direction: column;
@@ -353,7 +353,7 @@ nav{
       object-fit: cover;
     }
     .tittle h1{
-          font-size: 2rem;
+          font-size: 1.5rem;
     }
     .tittleinfo p{
       font-size: 0.8rem;
